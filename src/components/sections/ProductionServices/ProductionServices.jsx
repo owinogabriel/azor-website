@@ -83,21 +83,38 @@ export const ProductionServices = () => {
           </div>
 
           {/* 4. Static Content Card */}
-          <div className="md:col-span-8 bg-white border border-slate-200 rounded-[2rem] p-10 flex flex-col justify-center shadow-sm">
-            <h3 className="text-3xl font-black mb-4">Don't have a design?</h3>
-            <p className="text-slate-600 text-lg mb-6 leading-relaxed">
-              Our studio team specializes in turning abstract ideas into
-              print-ready masterpieces. We optimize every logo for fabric,
-              ceramic, and vinyl.
-            </p>
-            <div className="flex space-x-6">
-              <div className="flex items-center text-sm font-bold text-slate-800">
-                <CheckCircle2 size={18} className="mr-2 text-green-500" />{" "}
-                Vector Ready
-              </div>
-              <div className="flex items-center text-sm font-bold text-slate-800">
-                <CheckCircle2 size={18} className="mr-2 text-green-500" /> Color
-                Matching
+          <div className="md:col-span-8 bg-white border border-slate-200 rounded-[2rem] p-8 md:p-12 flex flex-col justify-center shadow-sm relative overflow-hidden">
+            {/* Subtle Background Accent */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full opacity-50 -mr-10 -mt-10" />
+
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-4xl font-black mb-4 text-slate-900 text-center md:text-left">
+                Don't have a design?
+              </h3>
+
+              <p className="text-slate-600 text-base md:text-lg mb-8 leading-relaxed text-center md:text-left max-w-2xl">
+                Our studio team specializes in turning abstract ideas into
+                print-ready masterpieces. We optimize every logo for fabric,
+                ceramic, and vinyl.
+              </p>
+
+              {/* Icons Container: Column on Mobile, Row on Desktop */}
+              <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                <div className="flex items-center text-sm font-bold text-slate-800 bg-slate-50 md:bg-transparent p-3 md:p-0 rounded-xl w-full md:w-auto justify-center md:justify-start border border-slate-100 md:border-none">
+                  <CheckCircle2
+                    size={20}
+                    className="mr-3 text-green-500 flex-shrink-0"
+                  />
+                  <span>Vector Ready</span>
+                </div>
+
+                <div className="flex items-center text-sm font-bold text-slate-800 bg-slate-50 md:bg-transparent p-3 md:p-0 rounded-xl w-full md:w-auto justify-center md:justify-start border border-slate-100 md:border-none">
+                  <CheckCircle2
+                    size={20}
+                    className="mr-3 text-green-500 flex-shrink-0"
+                  />
+                  <span>Color Matching</span>
+                </div>
               </div>
             </div>
           </div>
