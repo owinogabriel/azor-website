@@ -9,37 +9,20 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface Project {
-  id: number;
-  title: string;
-  category:
-    | "Jerseys"
-    | "Drinkware"
-    | "Stickers"
-    | "Corporate"
-    | "Security & Tech"
-    | "All";
-  client: string;
-  description: string;
-  specs: string[];
-  image: string;
-  size: "small" | "medium" | "large";
-}
-
-const PortfolioPage: React.FC = () => {
-  const [filter, setFilter] = useState<Project["category"]>("All");
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+const PortfolioPage = () => {
+  const [filter, setFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
 
   // Close modal on Escape key
   useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
+    const handleEsc = (e) => {
       if (e.key === "Escape") setSelectedProject(null);
     };
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
 
-  const categories: Project["category"][] = [
+  const categories = [
     "All",
     "Jerseys",
     "Drinkware",
@@ -48,7 +31,7 @@ const PortfolioPage: React.FC = () => {
     "Security & Tech",
   ];
 
-  const projects: Project[] = [
+  const projects = [
     {
       id: 1,
       title: "Hakika Brand Identity Suite",
@@ -114,7 +97,7 @@ const PortfolioPage: React.FC = () => {
       size: "medium",
     },
     {
-      id: 5, // Increment based on your list
+      id: 5,
       title: "Signature Streetwear Collection",
       category: "Corporate",
       client: "Azor Apparel Line",
@@ -126,7 +109,7 @@ const PortfolioPage: React.FC = () => {
         "High-Pressure Heat Transfer",
         "Color-Fast Textile Pigments",
       ],
-      image: "/images/apparel_line.png", // Replace with your actual image path
+      image: "/images/apparel_line.png",
       size: "large",
     },
     {
@@ -142,7 +125,7 @@ const PortfolioPage: React.FC = () => {
         "Breathable Mesh Paneling",
         "Reinforced Stitching",
       ],
-      image: "/images/jerseys.png", // Replace with your actual image path
+      image: "/images/jerseys.png",
       size: "medium",
     },
     {
@@ -158,10 +141,10 @@ const PortfolioPage: React.FC = () => {
         "Motion-Triggered Cloud Analytics",
         "Professional Cable Management",
       ],
-      image: "/images/cctv_install.png", // Replace with your image path
+      image: "/images/cctv_install.png",
       size: "large",
     },
-     {
+    {
       id: 9,
       title: "Technical Command & Calibration",
       category: "Security & Tech",
@@ -193,7 +176,6 @@ const PortfolioPage: React.FC = () => {
       image: "/images/team_calibration.png",
       size: "medium",
     },
-   
   ];
 
   const filteredProjects =
@@ -211,34 +193,20 @@ const PortfolioPage: React.FC = () => {
             <ArrowLeft size={16} /> Back to Studio
           </Link>
           <div
-            className="
-    flex gap-2
-    p-1
-    px-2 md:px-1
-    bg-slate-100/50
-    rounded-full
-    overflow-x-auto md:overflow-visible
-    max-w-full
-    scrollbar-hide
-  "
+            className="flex gap-2 p-1 px-2 md:px-1 bg-slate-100/50 rounded-full overflow-x-auto md:overflow-visible max-w-full scrollbar-hide"
           >
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`
-        px-4 py-1.5
-        rounded-full
-        text-xs font-black
-        transition-all
-        whitespace-nowrap
-        shrink-0
-        ${
-          filter === cat
-            ? "bg-white text-blue-600 shadow-sm"
-            : "text-slate-500 hover:text-slate-800"
-        }
-      `}
+                  px-4 py-1.5 rounded-full text-xs font-black transition-all whitespace-nowrap shrink-0
+                  ${
+                    filter === cat
+                      ? "bg-white text-blue-600 shadow-sm"
+                      : "text-slate-500 hover:text-slate-800"
+                  }
+                `}
               >
                 {cat}
               </button>
