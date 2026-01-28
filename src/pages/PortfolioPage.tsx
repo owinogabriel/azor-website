@@ -12,7 +12,13 @@ import { Link } from "react-router-dom";
 interface Project {
   id: number;
   title: string;
-  category: "Jerseys" | "Drinkware" | "Stickers" | "Corporate" | "All";
+  category:
+    | "Jerseys"
+    | "Drinkware"
+    | "Stickers"
+    | "Corporate"
+    | "Security & Tech"
+    | "All";
   client: string;
   description: string;
   specs: string[];
@@ -39,6 +45,7 @@ const PortfolioPage: React.FC = () => {
     "Drinkware",
     "Stickers",
     "Corporate",
+    "Security & Tech",
   ];
 
   const projects: Project[] = [
@@ -106,8 +113,87 @@ const PortfolioPage: React.FC = () => {
       image: "/images/drinkware.png",
       size: "medium",
     },
-
-    // ... add other projects here
+    {
+      id: 5, // Increment based on your list
+      title: "Signature Streetwear Collection",
+      category: "Corporate",
+      client: "Azor Apparel Line",
+      description:
+        "A showcase of our premium textile capabilities. This collection features heavy-duty hoodies and tapered joggers engineered for the modern urban lifestyle. By utilizing advanced heat-press technology and high-GSM fabrics, we deliver comfort that doesn't compromise on durability or brand presence.",
+      specs: [
+        "Premium Fleece Hoodies",
+        "Custom Tapered Joggers",
+        "High-Pressure Heat Transfer",
+        "Color-Fast Textile Pigments",
+      ],
+      image: "/images/apparel_line.png", // Replace with your actual image path
+      size: "large",
+    },
+    {
+      id: 6,
+      title: "Elite Performance Jerseys",
+      category: "Jerseys",
+      client: "Athletic Departments",
+      description:
+        "Engineered for the pitch and the court. Our custom jerseys utilize breathable, moisture-wicking fabrics paired with precision-cut vinyl or sublimation printing. We focus on lightweight performance and high-visibility numbering to ensure athletes look professional while staying at peak performance.",
+      specs: [
+        "Moisture-Wicking Fabric",
+        "Precision Vinyl Plotting",
+        "Breathable Mesh Paneling",
+        "Reinforced Stitching",
+      ],
+      image: "/images/jerseys.png", // Replace with your actual image path
+      size: "medium",
+    },
+    {
+      id: 7,
+      title: "Integrated Surveillance Solutions",
+      category: "Security & Tech",
+      client: "Commercial & Residential Clients",
+      description:
+        "Beyond aesthetics, we provide peace of mind through precision technology. Our CCTV installation service focuses on 'Zero-Blind-Spot' mapping and high-definition remote monitoring. We integrate smart analytics with hardware to ensure your business or home is protected by the latest in digital surveillance and network security.",
+      specs: [
+        "4K Ultra-HD Smart Cameras",
+        "Remote Mobile Access Setup",
+        "Motion-Triggered Cloud Analytics",
+        "Professional Cable Management",
+      ],
+      image: "/images/cctv_install.png", // Replace with your image path
+      size: "large",
+    },
+     {
+      id: 9,
+      title: "Technical Command & Calibration",
+      category: "Security & Tech",
+      client: "System Integration",
+      description:
+        "Beyond the hardware, our team specializes in the digital heartbeat of your security. Here, our technician is shown performing final system calibrations—configuring DVR/NVR settings, optimizing network bandwidth, and ensuring the mobile viewing interface is synchronized for the client.",
+      specs: [
+        "Network Protocol Configuration",
+        "Multi-Channel Syncing",
+        "Firmware Optimization",
+        "User Interface Handover",
+      ],
+      image: "/images/team_field_ops.png",
+      size: "medium",
+    },
+    {
+      id: 10,
+      title: "Field Operations: Infrastructure Phase",
+      category: "Security & Tech",
+      client: "Site Deployment Team",
+      description:
+        "The AZoR technical crew in active deployment. This phase focuses on the physical backbone of a surveillance system—mounting high-performance hardware at optimal vantage points and managing complex cabling. Our team operates with a focus on safety, efficiency, and structural integrity.",
+      specs: [
+        "High-Altitude Equipment Mounting",
+        "Structured Cabling Solutions",
+        "Weather-Proof Hardware Sealing",
+        "Active Site Safety Protocols",
+      ],
+      image: "/images/team_calibration.png",
+      size: "medium",
+    },
+   
   ];
 
   const filteredProjects =
