@@ -16,19 +16,23 @@ export const Navigation = ({ scrolled, mobileMenuOpen, onToggleMobile }) => {
       // Update URL
       navigate(`/${sectionId.toLowerCase()}`);
       // Scroll to section
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
     <>
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
-      }`}>
+      <nav
+        className={`fixed w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
+            : "bg-transparent py-5"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center">
             <Logo />
-            
+
             <div className="hidden md:flex items-center space-x-10">
               {NAVIGATION_ITEMS.map((item) => (
                 <button
@@ -56,19 +60,23 @@ export const Navigation = ({ scrolled, mobileMenuOpen, onToggleMobile }) => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
-        mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}>
+      <div
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+          mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
         {/* Backdrop */}
-        <div 
+        <div
           className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           onClick={onToggleMobile}
         />
-        
+
         {/* Menu Panel */}
-        <div className={`absolute top-0 right-0 h-full w-64 bg-white shadow-xl transition-transform duration-300 ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
+        <div
+          className={`absolute top-0 right-0 h-full w-64 bg-white shadow-xl transition-transform duration-300 ${
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
           <div className="flex flex-col p-6 pt-20 space-y-6">
             {NAVIGATION_ITEMS.map((item) => (
               <button
